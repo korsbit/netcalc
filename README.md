@@ -31,8 +31,7 @@
 >>> sub.calc()
 {'ip': '2001:db8:85a3:0000:0000:8a2e:370:7334/37', 
 'net_address': '2001:db8:8000:0000:0000:0000:0000:0000', 
-'range': ('2001:db8:8000:0000:0000:0000:0000:0000', '2001:db8:87ff:ffff:ffff:ffff:ffff:ffff'), 
-'usable_range': ('2001:db8:8000:0000:0000:0000:0000:1', '2001:db8:87ff:ffff:ffff:ffff:ffff:fffe'), 
+'range': ('2001:db8:8000:0000:0000:0000:0000:0000', '2001:db8:87ff:ffff:ffff:ffff:ffff:ffff'),
 'wildcard_mask': '0000:0000:7ff:ffff:ffff:ffff:ffff:ffff', 
 'subnet_mask': 'ffff:ffff:f800:0000:0000:0000:0000:0000'}
 ```
