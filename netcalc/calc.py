@@ -349,19 +349,13 @@ def ip_class(mask: MaskType) -> str:
 
 @IPCalc([Ip.Ipv4, Ip.Ipv6])
 def calc(IP: GenericIpType, mask: MaskType):
-    """
-    result = {'net_address': net_address(IP, mask).IP, 'broadcast': broadcast(IP, mask).IP, 
-            'usable_range': tuple([ip.IP for ip in ip_usable_range(IP, mask)]), 
-            'range': tuple([ip.IP for ip in ip_range(IP, mask)]),
-            'subnet_mask': subnet_mask(mask, IP).IP,
-            'wildcard_mask': wildcard_mask(mask, IP).IP}
-    """
     result = {}
     result.update({ 'ip': '{}/{}'.format(IP.IP, mask) })
 
     if IP.type == Ip.Ipv4.type:
-        result.update({'broadcast': broadcast(IP, mask).IP})
-        result.update({'class': ip_class(mask)})
+        result.update({ 'broadcast': broadcast(IP, mask).IP })
+        result.update({ 'class': ip_class(mask) })
+        result.update({ 'usable_range': tuple([ip.IP for ip in ip_usable_range(IP, mask)]) })
     
     result.update({ 'net_address': net_address(IP, mask).IP })
     result.update({ 'range': tuple([ip.IP for ip in ip_range(IP, mask)]) })

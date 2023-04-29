@@ -49,9 +49,6 @@ class Ipv6(Ip.Ipv6):
     def net_address(self):
         return calc.net_address(self.IP, self.mask)
 
-    def usable_range(self):
-        return calc.ip_usable_range(self.IP, self.mask)
-
     def range(self):
         return calc.ip_range(self.IP, self.mask)
 
@@ -60,9 +57,6 @@ class Ipv6(Ip.Ipv6):
 
     def wildmask(self):
         return calc.wildcard_mask(self.mask, Ip.Ipv6)
-
-    def broadcast(self):
-        return calc.broadcast(self.IP, self.mask)
 
     def check(self):
         mask_result = calc.ipv6_mask(self.mask)
